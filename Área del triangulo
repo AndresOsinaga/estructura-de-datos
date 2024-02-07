@@ -1,0 +1,24 @@
+//Andrés Osinaga
+#include <iostream>
+using namespace std;
+float A(float b, float h);
+
+int main(){
+  long base, altura;
+  cout<<"Base:";
+    do{
+        cin>>base;
+    }while(base<=0);
+    cout<<"Altura:";
+    do{
+        cin>>altura;
+    }while(altura<=0);
+    cout<<"El area del triangulo es "<<A(base,altura)<<endl;
+    return 0;
+}
+
+float A(float b, float h){
+    float aux;
+    aux=(b*h)/2;
+    return aux;
+}
