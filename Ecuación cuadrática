@@ -1,0 +1,29 @@
+// Ecuación cuadrática
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main(){
+    double a,b,c,u,X1,X2,D;
+    cout<<"a=";cin>>a;
+    cout<<"b=";cin>>b;
+    cout<<"c=";cin>>c;
+    D=pow(b,2)-(4)*a*c;
+    cout<<"Discriminante:"<<D<<endl;
+    if(D==0){
+        u=(-b)/(2*a);
+        cout<<"Solución unica X1 y X2 ="<<u<<endl;
+    }
+    else if(D>0){
+        X1=(-b+sqrt(D))/2*a;
+        X2=(-b-sqrt(D))/2*a;
+        cout<<"X1="<<X1<<endl;
+        cout<<"X2="<<X2<<endl;
+    }
+    else{
+        X1=(-b+sqrt(-D))/2*a;
+        X2=(-b-sqrt(-D))/2*a;
+        cout<<"X1="<<X1<<"i"<<endl;
+        cout<<"X2="<<X2<<"i"<<endl;
+    }
+    return 0;
+}
