@@ -1,0 +1,64 @@
+Andres Daniel Osinaga 
+#include <iostream>
+using namespace std;
+
+void potencia(float x, float n, float &result);
+
+void factorial(){
+    double x, fact=1;
+    cout<<"Factorial de:";cin>>x;
+    if(x<0){
+        cout<<"Valor indefinido"<<endl;
+    }
+    for(int i=1; i<=x; i++){
+        fact*=i;
+    }
+    cout<<"Factorial de "<<x<<"="<<fact<<endl;
+}
+
+void Cilindro(){
+    const double Pi=3.141592653;
+    double D,h,R;
+    cout<<"Diametro=";cin>>D;
+    R=D/2.0;
+    cout<<"Radio="<<R<<endl;
+    cout<<"Altura=";cin>>h;
+    cout<<"Volumen del cilindro es "<< Pi*R*h<<endl;
+}
+int main(){
+    int op;
+    float base, exponente, r;
+    do{
+    cout<<"--------MENU--------"<<endl;
+    cout<<"1.-Calcular potencia."<<endl;
+    cout<<"2.-Calcular factorial."<<endl;
+    cout<<"3.-Volume de un cilindro."<<endl;
+    cout<<"0.-Salir"<<endl;
+    cin>>op;
+    switch(op){
+        case 1:cout<<"Base=";cin>>base;
+            cout<<"Exponente:";cin>>exponente;
+            potencia(base,exponente,r);
+            cout<<base<<"^"<<exponente<<r<<endl;
+        break;
+        case 2:
+        factorial();
+        break;
+        case 3:
+        Cilindro();
+        break;
+        case 0:cout<<"Saliendo....."<<endl;
+        break;
+        default:cout<<"Opcion ingresada incorrecta."<<endl;
+        break;
+    }
+    }
+    while(op!=0);
+    return 0;
+}
+void potencia(float x, float num, float &R){
+    R=1;
+    for(int i=1; i<=num; i++){
+        R*=x;
+    }
+}
