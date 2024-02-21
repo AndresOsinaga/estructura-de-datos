@@ -1,0 +1,19 @@
+// Andrés Osinaga
+#include <iostream>
+using namespace std;
+int potencia(int b,int e);
+
+int main(){
+    int base, expo;
+    cout<<"Base:";cin>>base;
+    cout<<"Exponente:";cin>>expo;
+    cout<<base<<"^"<<expo<<"="<<potencia(base,expo);
+    return 0;
+}
+int potencia(int b, int e){
+    if(e==0)
+    return 1;
+    else
+    return b*potencia(b,e-1);
+}
+
