@@ -1,0 +1,20 @@
+// Andrés Osinaga
+#include <iostream>
+using namespace std;
+int serie(int x);
+int main(){
+    int n;
+    cout<<"Serie a calcular:";cin>>n;
+    cout<<"Serie de "<<n<<endl;
+    for(int i=0; i<n; i++){
+        cout<<serie(i)<<"|";
+    }
+    return 0;
+}
+
+int serie(int x){
+    if(x<=1)
+    return x;
+    else
+    return serie(x-1)+serie(x-2);
+}
