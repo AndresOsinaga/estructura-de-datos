@@ -1,0 +1,20 @@
+#include <iostream>
+#include "Vector.h"
+#define MAX 10
+using namespace std;
+
+int main(){
+    int v[MAX], x;
+    Vector Vec;
+    cout << "Ingrese tamaño del vector:";
+    do {
+        cin >> x;
+    } while (x < MAX || x>MAX);
+    Vec.set_n(x);
+    Vec.mostrar(x, v);
+    Vec.cargar(x, v);
+    Vec.ordenar(x, v);
+    Vec.promedio(x, v);
+              
+       
+}
