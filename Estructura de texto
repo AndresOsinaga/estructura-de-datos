@@ -1,0 +1,135 @@
+Integrantes :
+1.-Andrés Daniel Osinaga Zurita
+2.-Elias Torrico 
+3.-Katherine Vargas Eguez
+Archivo Cadenas.h:
+#pragma once
+#include <string>
+using namespace std;
+class Cadenas{
+private:
+	int longitud;
+	string cadenas;
+public:
+	Cadenas();
+	~Cadenas();
+	string get_Cadenas();
+	void set_Cadenas(string car);
+	int tamanio();
+  string Comparar()
+	int Contar();
+	string invertir(string nom);
+	string quitar_vocal(string nom, int cont, string nom2);
+	//void palindromo(string car, string nom);
+};
+___________________________________________
+Cadenas.cpp
+#include "Cadenas.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+Cadenas::Cadenas() {
+
+}
+Cadenas::~Cadenas() {
+
+}
+string Cadenas::get_Cadenas() {
+	return cadenas;
+}
+void Cadenas::set_Cadenas(string car) {
+	cadenas = car;
+	longitud = cadenas.length();
+}
+int Cadenas::tamanio() {
+	return longitud;
+}
+string Cadenas::invertir(string nom) {
+	char aux;
+	cadenas = nom;
+	for (int i = 0; i < longitud / 2; i++) {
+		aux = nom[i];
+		nom[i] = nom[longitud - 1 - i];
+		nom[longitud - 1 - i] = aux;
+	}
+	return nom;
+}
+string Cadenas::quitar_vocal(string nom, int cont, string nom2) {
+	cadenas = nom;
+	for (int i = 0; i < longitud; i++)
+		if (nom[i] != 'a' && nom[i] != 'e' && nom[i] != 'i' && nom[i] != 'o' && nom[i] != 'u')
+		{
+			nom2[cont] = nom[i];
+			cont++;
+		}
+	return nom2;
+}
+/*
+void Cadenas::palindromo(string car, string nom) {
+
+}
+*/
+int Cadenas::Comparar (string Cadena, string Cadena2)
+{
+	
+}
+int Cadenas::Contar()
+{
+	
+}
+________________________________________
+Cadenas main
+#include "Cadenas.h"
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int op, longitud=0,cont;
+	string nombre, var2;
+	Cadenas can1;
+	char aux;
+	do {
+		cout << "\t Menu\n";
+		cout << "1.- Pedir string\n";
+		cout << "2.- Longitud del string\n";
+		/*cout << "3.- Comparar un string\n";
+		cout << "4.- Contar Vocales\n";
+		cout << "5.- Sacar un substring\n";
+		cout << "3.- Encontrar un caracter\n";
+		*/
+		cout << "3.- Invertir caracter\n";
+		cout << "4.- Quitar vocales\n";
+		cout << "5.- Palindromo\n";
+		cout << "0.- Salir\n";
+		cout << "Opcion:"; cin >> op;
+		switch (op) {
+		case 1: cout << "Ingrese un texto\n";
+			cin.ignore();
+			getline(cin, nombre);
+			can1.set_Cadenas(nombre);
+			break;
+		case 2: cout << "La longitud es: " << can1.tamanio() << "\n";
+			break;
+		case 3:cout << "Texto invertido:" << can1.invertir( nombre)<<"\n";
+			break;
+		case 4:cout << "Texto invertido:" << can1.quitar_vocal(nombre, cont, var2) << "\n";
+			break;
+case 5:
+	cout << endl << "Ejemplo de uso de substring" << endl;
+	cout << endl << "Ingrese desde donde desea extraer el substring: ";
+	cin >> pos;
+	cout << nombre.substr(pos, longitud - pos);
+	cin.ignore();
+	break;
+case 6:
+	cout << var2.find(' ');
+	longitud = var2.length();
+	for (int i = 0; i < longitud; i++)
+		if (var2.at(i) == ' ')
+			cout << endl << "Existe un espacio en: " << i;
+	break;
+		system("pause");
+		}
+	} while (op != 0);
+}
