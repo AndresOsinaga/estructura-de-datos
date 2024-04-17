@@ -1,0 +1,59 @@
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato
+        self.siguiente = None
+
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None
+
+    def insertar_al_principio(self, dato):
+        nuevo_nodo = Nodo(dato)
+        nuevo_nodo.siguiente = self.cabeza
+        self.cabeza = nuevo_nodo
+
+    def imprimir_lista(self):
+        actual = self.cabeza
+        while actual:
+            print(actual.dato, end=" -> ")
+            actual = actual.siguiente
+        print("None")
+    def sacar_medio(self, valor):
+        actual = self.cabeza
+        prev = None
+        while actual:
+            if actual.dato == valor:
+                if prev:
+                    prev.siguiente = actual.siguiente
+                else:
+                    self.cabeza = actual.siguiente
+                return
+            prev = actual
+            actual = actual.siguiente
+def mostrar_menu():
+    print("1.-Insertar al final")
+    print("2.-Insertar al inicio")
+    print("3.-Sacar al inicio")
+    print("4.-Sacar al final")
+    print("5.-Sacar del medio")
+    print("6.-Lista vacia")
+    print("7.-Lista llena")
+    print("8.-Mostrar inicio")
+    print("9.-Mostrar final")
+    print("10.-Mostrar")
+    
+# Ejemplo de uso
+lista = ListaEnlazada() #se creo el objeto
+while True:
+    mostrar_menu()
+    op=input("Ingrese operacion")
+    if op == "1":
+        lista.insertar_al_principio=input("ingrese valor")
+    elif op == "5":
+        lista.sacar_medio(7)
+    elif op =="10":
+        lista.imprimir_lista()
+
+#lista.insertar_al_principio(3)
+#lista.insertar_al_principio(7)
+#lista.insertar_al_principio(11)
